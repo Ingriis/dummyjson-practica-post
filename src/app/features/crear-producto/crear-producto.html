@@ -1,0 +1,53 @@
+<div class="page">
+
+  <div class="content">
+
+    <!-- FORMULARIO -->
+    <div class="card">
+      <h2>Crear Producto</h2>
+
+      <form #form="ngForm" (ngSubmit)="crearProducto(form)">
+
+        <input name="title" [(ngModel)]="producto.title" required placeholder="Título">
+        <small *ngIf="enviado && !producto.title">El título es obligatorio</small>
+
+        <input name="description" [(ngModel)]="producto.description" required placeholder="Descripción">
+        <small *ngIf="enviado && !producto.description">La descripción es obligatoria</small>
+
+        <input name="price" type="number" [(ngModel)]="producto.price" required min="1" placeholder="Precio">
+        <small *ngIf="enviado && (!producto.price || producto.price <= 0)">
+          El precio debe ser mayor a 0
+        </small>
+
+        <input name="brand" [(ngModel)]="producto.brand" required placeholder="Marca">
+        <small *ngIf="enviado && !producto.brand">La marca es obligatoria</small>
+
+        <select name="category" [(ngModel)]="producto.category" required>
+          <option value="">Selecciona una categoría</option>
+          <option *ngFor="let cat of categorias" [value]="cat.value">
+            {{ cat.label }}
+          </option>
+        </select>
+
+        <button type="submit" [disabled]="loading">
+          <span *ngIf="!loading">Crear Producto</span>
+          <span *ngIf="loading" class="loader"></span>
+        </button>
+
+      </form>
+    </div>
+
+    <!-- JSON -->
+    <div class="json-view" *ngIf="productoCreado">
+      <h3>Respuesta JSON</h3>
+      <pre>{{ productoCreado | json }}</pre>
+    </div>
+
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" *ngIf="mostrarToast">
+    ✅ Producto creado correctamente
+  </div>
+
+</div>
