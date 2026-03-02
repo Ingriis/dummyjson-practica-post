@@ -1,0 +1,166 @@
+/* Estilos base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;   
+  background: #d6f5fd;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Tarjeta del formulario */
+.card {
+  background: #b1b0ff;
+  padding: 25px;
+  width: 700px;
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Grid de 2 columnas */
+.form-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 25px !important;
+  margin-bottom: 20px !important;
+  width: 100% !important;
+}
+
+/* Columnas */
+.form-column {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+  width: 100% !important;
+}
+
+/* Grupo de formulario */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+}
+
+/* Etiquetas */
+label {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Campos de entrada */
+input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4e73df;
+  box-shadow: 0 0 5px rgba(78, 115, 223, 0.3);
+}
+
+/* Textos de ayuda */
+.hint {
+  color: #6c757d;
+  font-size: 10px;
+  margin-top: 2px;
+  display: block;
+}
+
+/* Botones */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4e73df;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button[type="button"] {
+  background-color: #6c757d;
+}
+
+/* Mensajes de éxito/error */
+.success {
+  margin-top: 15px;
+  color: #01b872;
+  font-weight: bold;
+  text-align: center;
+  font-size: 13px;
+}
+
+.success.error {
+  color: #dc3545;
+}
+
+/* Inspector */
+.inspector {
+  margin-top: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.inspector-header {
+  padding: 8px 12px;
+  background-color: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.inspector-content {
+  padding: 12px;
+  background-color: white;
+}
+
+.inspector-content pre {
+  margin: 0;
+  font-size: 11px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Responsive: móviles */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+}

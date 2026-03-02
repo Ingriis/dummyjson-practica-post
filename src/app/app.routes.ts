@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { Home } from './pages/home/home';
-import { CrearComentario } from './pages/crear-comentario/crear-comentario';
+import { CrearUsuario } from './pages/crear-usuario/crear-usuario';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: Home
+    path: 'crear-usuario',
+    component: CrearUsuario
   },
   {
-    path: 'crear-comentario',
-    component: CrearComentario
+    path: '',
+    redirectTo: '/crear-usuario',
+    pathMatch: 'full'
   }
 ];
