@@ -1,0 +1,60 @@
+<div class="container">
+
+  <div class="content">
+
+    <!-- FORMULARIO -->
+    <div class="card">
+      <h2>Crear Comentario</h2>
+
+      <form (ngSubmit)="submitComment()">
+
+        <div class="form-group">
+          <label for="body">Comentario</label>
+          <textarea 
+            id="body"
+            [(ngModel)]="body" 
+            name="body" 
+            required>
+          </textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="postId">ID de publicación</label>
+          <input 
+            id="postId"
+            type="number" 
+            [(ngModel)]="postId" 
+            name="postId" 
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="userId">ID de usuario</label>
+          <input 
+            id="userId"
+            type="number" 
+            [(ngModel)]="userId" 
+            name="userId" 
+            required>
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Crear Comentario</button>
+          <button type="button" (click)="clearForm()">Limpiar</button>
+        </div>
+
+      </form>
+
+      <p *ngIf="successMessage" class="success">
+        {{ successMessage }}
+      </p>
+    </div>
+
+    <!-- JSON VIEW -->
+    <div class="json-view" *ngIf="createdComment">
+      <pre>{{ createdComment | json }}</pre>
+    </div>
+
+  </div>
+
+</div>

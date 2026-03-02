@@ -1,0 +1,137 @@
+<!-- Contenedor principal -->
+<div class="container">
+  <div class="card">
+    <h2>Crear Usuario</h2>
+
+    <!-- Formulario -->
+    <form (ngSubmit)="submitUser()">
+      <!-- Grid de 2 columnas -->
+      <div class="form-grid">
+        <!-- Columna izquierda -->
+        <div class="form-column">
+          <!-- Nombre -->
+          <div class="form-group">
+            <label for="firstName">Nombre *</label>
+            <input 
+              id="firstName"
+              type="text" 
+              [(ngModel)]="firstName" 
+              name="firstName" 
+              required
+              placeholder="Ej: Emily">
+          </div>
+
+          <!-- Apellido -->
+          <div class="form-group">
+            <label for="lastName">Apellido *</label>
+            <input 
+              id="lastName"
+              type="text" 
+              [(ngModel)]="lastName" 
+              name="lastName" 
+              required
+              placeholder="Ej: Johnson">
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input 
+              id="email"
+              type="email" 
+              [(ngModel)]="email" 
+              name="email" 
+              required
+              placeholder="ejemplo@gmail.com">
+            <small class="hint">gmail, hotmail, outlook, yahoo, icloud</small>
+          </div>
+
+          <!-- Username -->
+          <div class="form-group">
+            <label for="username">Username *</label>
+            <input 
+              id="username"
+              type="text" 
+              [(ngModel)]="username" 
+              name="username" 
+              required
+              placeholder="emily_johnson">
+            <small class="hint">3-20 caracteres, solo letras, números, _</small>
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="form-column">
+          <!-- Contraseña -->
+          <div class="form-group">
+            <label for="password">Contraseña *</label>
+            <input 
+              id="password"
+              type="password" 
+              [(ngModel)]="password" 
+              name="password" 
+              required
+              placeholder="********">
+            <small class="hint">Min 8 caracteres. Mayúsc, minúsc, número</small>
+          </div>
+
+          <!-- Confirmar contraseña -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirmar *</label>
+            <input 
+              id="confirmPassword"
+              type="password" 
+              [(ngModel)]="confirmPassword" 
+              name="confirmPassword" 
+              required
+              placeholder="********">
+          </div>
+
+          <!-- Teléfono -->
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input 
+              id="phone"
+              type="tel" 
+              [(ngModel)]="phone" 
+              name="phone"
+              placeholder="7712919535">
+            <small class="hint">7-15 dígitos</small>
+          </div>
+
+          <!-- Fecha de nacimiento -->
+          <div class="form-group">
+            <label for="birthDate">Fecha nacimiento</label>
+            <input 
+              id="birthDate"
+              type="date" 
+              [(ngModel)]="birthDate" 
+              name="birthDate">
+            <small class="hint">Mayor de 18 años</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="button-group">
+        <button type="submit">Crear Usuario</button>
+        <button type="button" (click)="clearForm()">Limpiar</button>
+      </div>
+    </form>
+
+    <!-- Inspector (resultado) -->
+    <div class="inspector" *ngIf="usuarioCreado">
+      <div class="inspector-header">
+        <span>Inspector</span>
+      </div>
+      <div class="inspector-content">
+        <pre>{{ usuarioCreado | json }}</pre>
+      </div>
+    </div>
+
+    <!-- Mensaje de éxito/error -->
+    <p *ngIf="successMessage" class="success" [class.error]="successMessage.includes('Error')">
+      {{ successMessage }}
+    </p>
+  </div>
+</div>

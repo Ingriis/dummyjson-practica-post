@@ -1,0 +1,119 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Fondo moderno */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 40px 20px;
+}
+
+/* Layout form + json */
+.content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Card blanca moderna */
+.card {
+  background: white;
+  padding: 40px;
+  width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* Botones */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button[type="button"] {
+  background: #6b7280;
+}
+
+/* JSON oscuro */
+.json-view {
+  width: 420px;
+  background: #111827;
+  color: #22d3ee;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+/* Mensaje éxito */
+.success {
+  margin-top: 15px;
+  color: #10b981;
+  font-weight: bold;
+  text-align: center;
+}
