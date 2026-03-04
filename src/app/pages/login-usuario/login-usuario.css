@@ -1,0 +1,175 @@
+.page {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  background: #f3f4f6;
+}
+
+.content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.json-view {
+  width: 420px;
+  background: #111827;
+  color: #22d3ee;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  font-size: 13px;
+}
+
+.card h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 4px 0;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.card input:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+.card input.error-input {
+  border-color: #ef4444;
+}
+
+small {
+  display: block;
+  color: #ef4444;
+  font-size: 12px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.error-box {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+.test-credentials {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+
+.test-title {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  text-align: center;
+  color: #374151;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 12px;
+}
+
+.credential-item {
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.loader {
+  border: 3px solid #ffffff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  animation: slideUp 0.4s ease;
+  z-index: 1000;
+}
+
+.json-view h3 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.json-view pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card, .json-view {
+    width: 100%;
+    max-width: 420px;
+  }
+}
